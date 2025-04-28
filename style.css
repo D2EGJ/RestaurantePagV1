@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #FDF6EC;
+    color: #5D4037;
+}
+
+/* Header */
+header {
+    background-color: #8D6E63;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #5D4037;
+    padding: 10px 5%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FDF6EC;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #FFCA28;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links.open {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    background-color: #8D6E63;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: #FDF6EC;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFCA28;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #FDF6EC;
+}
+
+/* Hero */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x600?text=Hero');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FDF6EC;
+    padding-top: 60px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #C77D46;
+    color: #FDF6EC;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #A26639;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.section-title span {
+    color: #C77D46;
+}
+
+/* Menu */
+#menu-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.imagen-pequena {
+    width: 200px; /* Ajusta el valor según el tamaño que quieras */
+    height: auto; /* Mantiene la proporción original */
+}
+
+#menu-container.fading {
+    opacity: 0;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    max-width: 400px;
+    width: 100%;
+}
+
+.menu-item-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.menu-item-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-item-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.menu-item-price {
+    font-weight: bold;
+    color: #C77D46;
+    font-size: 1.2rem;
+}
+
+.menu-item-description {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: #7D6E6A;
+}
+
+/* Company contacts */
+.company-contacts {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.company-contacts h3 {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #5D4037;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #C77D46;
+}
+
+/* About, Location, Contact and Footer minor styles */
+.about-container, .contact-container { display: flex; gap: 50px; flex-wrap: wrap; }
+.map-container iframe { width: 100%; height: 100%; border: none; }
+.location, footer { text-align: center; }
+
+/* Responsive */
+@media (max-width: 991px) {
+    .about-container, .contact-container { flex-direction: column; }
+    .company-contacts { margin-left: 0; margin-top: 20px; align-items: center; }
+    .section-title { font-size: 2rem; }
+    .hero h1 { font-size: 2.5rem; }
+}
+@media (max-width: 768px) {
+    header { padding: 15px 3%; }
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    section { padding: 60px 3%; }
+}
